@@ -27,6 +27,9 @@ public class StudentDBApp {
 		StudentDBApp myob = new StudentDBApp ();
 		Student mystudent = new Student();
 		mystudent.Student();
+		mystudent.enroll();
+		mystudent.payTuition(400);
+		
 		//myob.connectSQL();
 	}
 }

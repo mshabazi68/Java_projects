@@ -3,7 +3,8 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class Student {
-	private String firstName, lastName, StudentID, courses;
+	private String firstName, lastName, StudentID;
+	private String courses = null;
 	private int gradeYear;
 	private int tuitionBalance = 0;
 	private int costOfCourse = 600;
@@ -27,6 +28,7 @@ public class Student {
 
 	}
 
+	/* Generate ID */
 	private String generateID() {
 		id++;
 		StudentID = gradeYear + "" + id;
@@ -34,21 +36,39 @@ public class Student {
 		return StudentID;
 	}
 
+	/* Enroll Method */
 	public void enroll() {
 		do {
 			System.out.println("Enter course to enroll (Q to quit): ");
 			Scanner in = new Scanner(System.in);
 			String course = in.nextLine();
-			if (courses != "Q") {
+			
+			if (!course.equals("Q")) {
 				courses = courses + " \n" + course;
 				tuitionBalance = tuitionBalance + costOfCourse;
-			} else {
-				System.out.println("Break!");
+			}else {
 				break;
 			}
+			
 		} while (1 != 0);
 		System.out.println("Enrolled in: " + courses);
-		System.out.println("Tuition Balance: "+ tuitionBalance);
+		System.out.println("Tuition Balance: " + tuitionBalance);
 	}
 
+	/* Account Balance */
+	public void viewBalance() {
+		System.out.println("The account balance is: $" + tuitionBalance);
+	}
+	/* Pay Tuition */
+	public void payTuition(int payment) {
+		tuitionBalance = tuitionBalance - payment;
+		System.out.println("Thank you for your payment of "+ payment);
+		viewBalance();
+	}
+	
+	/* show status of payment */
+
+	public void statusPayment (boolean status) {
+		
+	}
 }
