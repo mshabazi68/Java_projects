@@ -60,7 +60,11 @@ public class Student {
 		System.out.println("The account balance is: $" + tuitionBalance);
 	}
 	/* Pay Tuition */
-	public void payTuition(int payment) {
+	public void payTuition() {
+		viewBalance();
+		System.out.println("Enter your payment: $");
+		Scanner in = new Scanner (System.in);
+		int payment = in.nextInt();
 		tuitionBalance = tuitionBalance - payment;
 		System.out.println("Thank you for your payment of "+ payment);
 		viewBalance();
@@ -68,7 +72,7 @@ public class Student {
 	
 	/* show status of payment */
 
-	public void statusPayment (boolean status) {
-		
+	public String statusPayment () {
+		return "Name: "+ firstName + " " + lastName + "\nCourse Enrolled:" + courses + "\nBalance: $ " + tuitionBalance; 
 	}
 }

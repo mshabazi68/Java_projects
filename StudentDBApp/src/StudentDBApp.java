@@ -26,9 +26,10 @@ public class StudentDBApp {
 		// TODO Auto-generated method stub
 		StudentDBApp myob = new StudentDBApp ();
 		Student mystudent = new Student();
-		mystudent.Student();
+	
 		mystudent.enroll();
-		mystudent.payTuition(400);
+		mystudent.payTuition();
+		System.out.println(mystudent.statusPayment());
 		
 		//myob.connectSQL();
 	}
