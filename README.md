@@ -1,5 +1,5 @@
 # Java_projects 
-I've listed my JAVA project 
+I've listed my JAVA projects 
 
 
 
